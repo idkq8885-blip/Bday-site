@@ -1,3 +1,29 @@
+// Login
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const loginBtn = document.getElementById("loginBtn");
+
+    loginBtn.addEventListener("click", () => {
+
+        const username = document.getElementById("username").value.trim();
+        const password = document.getElementById("password").value.trim();
+
+        if(username === "Sayma" && password === "10/07/2010"){
+
+            document.getElementById("loginScreen").style.display = "none";
+
+        }else{
+
+            document.getElementById("error").textContent =
+            "Wrong name or password ❤️";
+
+        }
+
+    });
+
+});
+
 // ===========================
 // Background Music
 // ===========================
