@@ -4,16 +4,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const loginBtn = document.getElementById("loginBtn");
 
+    // Enter key support
+    document.addEventListener("keydown", function(e){
+
+        if(e.key==="Enter"){
+
+            loginBtn.click();
+
+        }
+
+    });
+
     loginBtn.addEventListener("click", () => {
-        document.addEventListener("keydown", function(e){
-
-    if(e.key==="Enter"){
-
-        loginBtn.click();
-
-    }
-
-});
 
         const username = document.getElementById("username").value.trim();
         const password = document.getElementById("password").value.trim();
@@ -32,7 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
-
 // ===========================
 // Background Music
 // ===========================
@@ -62,15 +63,21 @@ playButton.addEventListener("click", () => {
 
 const celebrateButton = document.getElementById("confettiButton");
 
-celebrateButton.addEventListener("click", () => {
+if (celebrateButton) {
 
-    confetti({
-        particleCount: 400,
-        spread: 180,
-        origin: { y: 0.6 }
+    celebrateButton.addEventListener("click", () => {
+
+        confetti({
+
+            particleCount:400,
+            spread:180,
+            origin:{y:0.6}
+
+        });
+
     });
 
-});
+}
 
 // ===========================
 // Floating Hearts
@@ -253,3 +260,63 @@ sections.forEach(section => {
 
 });
 
+// ===========================
+// Landscape Final Letter
+// ===========================
+
+const lines=document.querySelectorAll(".line");
+
+let finalShown = false;
+
+function showLines(){
+
+    lines.forEach((line,index)=>{
+
+        setTimeout(()=>{
+
+            line.style.opacity="1";
+
+            line.style.transform="translateY(0)";
+
+        },index*2500);
+
+    });
+
+}
+
+function checkOrientation(){
+
+    if(finalShown) return;
+
+    if(window.innerWidth > window.innerHeight){
+
+        finalShown = true;
+
+        document.getElementById("landscapeLetter").style.display = "block";
+
+        showLines();
+
+        confetti({
+
+            particleCount:250,
+
+            spread:180,
+
+            origin:{y:0.6}
+
+        });
+
+    }
+
+}
+
+window.addEventListener("orientationchange", checkOrientation);
+
+window.addEventListener("resize", checkOrientation);
+window.addEventListener("orientationchange", checkOrientation);
+
+document.getElementById("rotateButton").addEventListener("click",()=>{
+
+    checkOrientation();
+
+});

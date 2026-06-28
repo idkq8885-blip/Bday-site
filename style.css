@@ -641,3 +641,113 @@ img{
     -webkit-user-drag:none;
 
 }
+
+/* ===========================
+   Rotate Screen
+=========================== */
+
+.rotate-section{
+
+    min-height:100vh;
+
+}
+
+.rotate-text{
+
+    margin-top:25px;
+
+    font-size:1.3rem;
+
+}
+
+#rotateButton{
+
+    margin-top:40px;
+
+    padding:18px 35px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:#ff5d8f;
+
+    color:white;
+
+    font-size:20px;
+
+}
+
+/* ===========================
+   Landscape Letter
+=========================== */
+
+#landscapeLetter{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:url("images/recent1.jpg") center/cover no-repeat;
+
+    z-index:9999;
+
+}
+
+#landscapeLetter .overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(0,0,0,.45);
+
+}
+
+.letter-box{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+    z-index:2;
+
+    padding:40px;
+
+    text-align:center;
+
+}
+
+.line{
+
+    opacity:0;
+
+    transform:translateY(20px);
+
+    transition:1s;
+
+    font-size:1.5rem;
+
+    margin:12px 0;
+
+}
+
+.signature{
+
+    color:#FFD700;
+
+    font-size:2rem;
+
+}
