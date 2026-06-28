@@ -1,0 +1,502 @@
+/* ===========================
+   Google Font Reset
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:linear-gradient(135deg,#ffe4ec,#f7e8ff,#fff7f3);
+
+    color:#444;
+
+    overflow-x:hidden;
+
+}
+
+/* ===========================
+   Sections
+=========================== */
+
+.section{
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:80px 20px;
+
+    position:relative;
+
+}
+
+/* ===========================
+   Hero Section
+=========================== */
+
+.hero h1{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:5rem;
+
+    color:#ff4f8b;
+
+    animation:fadeUp 1.5s ease;
+
+}
+
+.hero span{
+
+    color:#d63384;
+
+}
+
+.hero h2{
+
+    margin-top:20px;
+
+    font-size:1.8rem;
+
+    font-weight:300;
+
+    animation:fadeUp 2s ease;
+
+}
+
+.hero button{
+
+    margin-top:45px;
+
+    padding:18px 38px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:#ff6ea9;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    transition:.3s;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+}
+
+.hero button:hover{
+
+    transform:translateY(-4px) scale(1.05);
+
+    background:#ff3d87;
+
+}
+
+.scroll-indicator{
+
+    margin-top:50px;
+
+    animation:bounce 2s infinite;
+
+    font-size:18px;
+
+    color:#666;
+
+}
+
+/* ===========================
+   Headings
+=========================== */
+
+.section h2{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:3.5rem;
+
+    color:#ff5d8f;
+
+    margin-bottom:50px;
+
+}
+
+/* ===========================
+   Photos
+=========================== */
+
+.photo-container{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:40px;
+
+    margin-bottom:40px;
+
+}
+
+.photo{
+
+    width:280px;
+
+    background:white;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+
+    transition:.4s;
+
+}
+
+.photo:hover{
+
+    transform:scale(1.06);
+
+}
+
+.photo img{
+
+    width:100%;
+
+    display:block;
+
+}
+
+/* ===========================
+   Polaroid Style
+=========================== */
+
+.polaroid{
+
+    padding:15px 15px 45px;
+
+    background:white;
+
+}
+
+.polaroid:nth-child(1){
+
+    transform:rotate(-7deg);
+
+}
+
+.polaroid:nth-child(2){
+
+    transform:rotate(7deg);
+
+}
+
+/* ===========================
+   Messages
+=========================== */
+
+.message{
+
+    max-width:800px;
+
+    font-size:1.2rem;
+
+    line-height:2;
+
+    padding:20px;
+
+}
+
+/* ===========================
+   Final Letter
+=========================== */
+
+.letter{
+
+    width:90%;
+    max-width:2000px;
+
+    padding:60px;
+
+    border-radius:25px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background-image:url("images/recent1.jpg");
+    background-size:cover;
+    background-position:center;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.25);
+
+}
+
+.letter::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(0,0,0,.55);
+
+    backdrop-filter:blur(2px);
+
+}
+
+.letter-content{
+
+    position:relative;
+
+    z-index:2;
+
+    color:white;
+
+    text-align:left;
+
+    font-size:1.2rem;
+
+    line-height:2.2;
+
+}
+
+.letter h1{
+
+    position:relative;
+
+    z-index:2;
+
+    color:white;
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:4rem;
+
+    margin-bottom:40px;
+
+    text-align:center;
+
+}
+
+.signature{
+
+    text-align:right;
+
+    margin-top:50px;
+
+    font-size:1.4rem;
+
+    font-weight:bold;
+
+    color:#FFD700;
+
+}
+
+.letter p{
+
+    font-size:1.2rem;
+
+    line-height:2;
+
+    text-align:left;
+
+}
+
+/* ===========================
+   Celebrate Button
+=========================== */
+
+#confettiButton{
+
+    margin-top:40px;
+
+    padding:18px 35px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:#ff5d8f;
+
+    color:white;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+#confettiButton:hover{
+
+    transform:scale(1.08);
+
+    background:#ff2f72;
+
+}
+
+/* ===========================
+   Floating Decorations
+=========================== */
+
+.hearts,
+.sparkles,
+.balloons{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+    z-index:-1;
+
+}
+
+/* ===========================
+   Fade Animation
+=========================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(50px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ===========================
+   Bounce
+=========================== */
+
+@keyframes bounce{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(10px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ===========================
+   Floating Hearts Animation
+=========================== */
+
+@keyframes float{
+
+    from{
+
+        transform:translateY(100vh);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:translateY(-120vh);
+
+        opacity:1;
+
+    }
+
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media(max-width:768px){
+
+.hero h1{
+
+    font-size:3.2rem;
+
+}
+
+.hero h2{
+
+    font-size:1.2rem;
+
+}
+
+.section h2{
+
+    font-size:2.6rem;
+
+}
+
+.photo{
+
+    width:90%;
+
+}
+
+.message{
+
+    font-size:1rem;
+
+}
+
+.letter{
+
+    padding:25px;
+
+}
+
+}
