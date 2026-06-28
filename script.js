@@ -5,6 +5,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const loginBtn = document.getElementById("loginBtn");
 
     loginBtn.addEventListener("click", () => {
+        document.addEventListener("keydown", function(e){
+
+    if(e.key==="Enter"){
+
+        loginBtn.click();
+
+    }
+
+});
 
         const username = document.getElementById("username").value.trim();
         const password = document.getElementById("password").value.trim();
@@ -97,7 +106,9 @@ function createHeart() {
 
 }
 
-setInterval(createHeart, 600);
+const isMobile = window.innerWidth <= 768;
+
+setInterval(createHeart, isMobile ? 1200 : 600);
 
 // ===========================
 // Floating Sparkles
@@ -139,7 +150,7 @@ function createSparkle() {
 
 }
 
-setInterval(createSparkle, 400);
+setInterval(createSparkle, isMobile ? 900 : 400);
 
 // ===========================
 // Floating Balloons
@@ -204,7 +215,7 @@ function createBalloon() {
 
 }
 
-setInterval(createBalloon, 1800);
+setInterval(createBalloon, isMobile ? 3500 : 1800);
 
 // ===========================
 // Fade-in on Scroll
@@ -242,52 +253,3 @@ sections.forEach(section => {
 
 });
 
-// ===========================
-// Typewriter Effect
-// ===========================
-
-const letter = document.getElementById("typewriter");
-
-const originalText = letter.innerHTML;
-
-letter.innerHTML = "";
-
-let index = 0;
-
-function typeWriter() {
-
-    if (index < originalText.length) {
-
-        letter.innerHTML += originalText.charAt(index);
-
-        index++;
-
-        setTimeout(typeWriter, 25);
-
-    }
-
-}
-
-const endingSection = document.querySelector(".ending");
-
-const endingObserver = new IntersectionObserver(entries => {
-
-    entries.forEach(entry => {
-
-        if (entry.isIntersecting) {
-
-            if (letter.innerHTML === "") {
-
-                typeWriter();
-
-            }
-
-        }
-
-    });
-
-}, {
-    threshold: 0.5
-});
-
-endingObserver.observe(endingSection);
